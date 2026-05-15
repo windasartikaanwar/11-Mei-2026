@@ -54,6 +54,16 @@ app.get('/', (req, res) => {
                 font-style: italic;
                 color: #555;
             }
+
+            a{
+                text-decoration: none;
+                color: #4a4a4a;
+                font-weight: bold;
+            }
+
+            a:hover{
+                color: #777;
+            }
         </style>
     </head>
 
@@ -101,6 +111,74 @@ app.get('/', (req, res) => {
             <div class="motto">
                 <b>Motto:</b> "Keep growing through every challenge."
             </div>
+
+            <br>
+
+            <center>
+                <a href="/about">About Me</a>
+            </center>
+
+        </div>
+
+    </body>
+    </html>
+    `);
+});
+
+app.get('/about', (req, res) => {
+    res.send(`
+    <html>
+    <head>
+        <title>About Winda</title>
+
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+
+            .container{
+                background: white;
+                max-width: 600px;
+                margin: auto;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+
+            h1{
+                text-align: center;
+                color: #444;
+            }
+
+            p{
+                line-height: 1.8;
+            }
+
+            a{
+                text-decoration: none;
+                color: #4a4a4a;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <h1>About Me</h1>
+
+            <p><b>Nama :</b> Winda Sartika Anwar</p>
+            <p><b>Tempat, Tanggal Lahir :</b> Padang, 05 Oktober 2004</p>
+            <p><b>Kampus :</b> Politeknik Negeri Padang</p>
+            <p><b>Jurusan :</b> Teknik Elektro</p>
+            <p><b>Program Studi :</b> D4 Teknik Elektronika Industri</p>
+
+            <br>
+
+            <a href="/">← Kembali ke Home</a>
 
         </div>
 
