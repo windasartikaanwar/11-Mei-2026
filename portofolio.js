@@ -2,185 +2,108 @@ import express from 'express'
 
 const app = express();
 
+// membaca folder public
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     res.send(`
-    <html>
+    <!DOCTYPE html>
+    <html lang="id">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Portofolio Winda</title>
 
-        <style>
-            body{
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 20px;
-            }
-
-            .container{
-                background: white;
-                max-width: 700px;
-                margin: auto;
-                padding: 25px;
-                border-radius: 12px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            }
-
-            h1{
-                text-align: center;
-                color: #444;
-            }
-
-            h2{
-                color: #666;
-                margin-top: 25px;
-            }
-
-            p{
-                line-height: 1.7;
-                text-align: justify;
-            }
-
-            ul{
-                padding-left: 20px;
-            }
-
-            li{
-                margin-bottom: 8px;
-            }
-
-            .motto{
-                margin-top: 20px;
-                text-align: center;
-                font-style: italic;
-                color: #555;
-            }
-
-            a{
-                text-decoration: none;
-                color: #4a4a4a;
-                font-weight: bold;
-            }
-
-            a:hover{
-                color: #777;
-            }
-        </style>
+        <link rel="stylesheet" href="/style.css">
     </head>
 
     <body>
 
-        <div class="container">
+        <div class="bg"></div>
 
-            <h1>PORTOFOLIO</h1>
+        <nav>
 
-            <p>
-                Haiii, kenalin aku <b>Winda Sartika Anwar</b>. 
-                Aku mahasiswi D4 Teknik Elektronika Industri 
-                Jurusan Teknik Elektro Politeknik Negeri Padang angkatan 2023.
-            </p>
+            <h1 class="logo">WINDA</h1>
 
-            <p>
-                Aku berasal dari SMA Negeri 4 Padang. 
-                Teman-teman biasanya manggil aku Winda, Win, Nda, dan Pinguin.
-            </p>
-
-            <p>
-                Aku suka belajar tentang elektronika, mikrokontroler, IoT, 
-                dan project-project seru lainnya. Walaupun kadang tugas 
-                dan coding bikin pusing, tapi semuanya tetap dijalani 
-                pelan-pelan sampai sekarang.
-            </p>
-
-            <h2>Data Diri</h2>
             <ul>
-                <li>Nama : Winda Sartika Anwar</li>
-                <li>TTL : Padang, 05 Oktober 2004</li>
-                <li>Kampus : Politeknik Negeri Padang</li>
-                <li>Jurusan : Teknik Elektro</li>
-                <li>Program Studi : D4 Teknik Elektronika Industri</li>
+                <li><a href="/">Home</a></li>
             </ul>
 
-            <h2>Keahlian</h2>
-            <ul>
-                <li>Arduino</li>
-                <li>IoT Dasar</li>
-                <li>Mikrokontroler Dasar</li>
-                <li>Web Server ESP32</li>
-            </ul>
+        </nav>
 
-            <div class="motto">
-                <b>Motto:</b> "Keep growing through every challenge."
+        <header>
+
+            <div class="hero-text">
+
+                <p class="hello">Hello Everyone 👋</p>
+
+                <h1>Winda Sartika Anwar</h1>
+
+                <h2>D4 Teknik Elektronika Industri</h2>
+
+                <p class="desc">
+                    Haiii, kenalin aku Winda. Aku mahasiswi D4 Teknik 
+                    Elektronika Industri Jurusan Teknik Elektro 
+                    Politeknik Negeri Padang angkatan 2023.
+                </p>
+
+                <p class="desc">
+                    Aku berasal dari SMA Negeri 4 Padang. 
+                    Teman-teman biasanya manggil aku Winda, Win, Nda, dan Pinguin.
+                </p>
+
+                <p class="desc">
+                    Aku suka belajar tentang elektronika, mikrokontroler, IoT, 
+                    dan project-project seru lainnya.
+                </p>
+
+                <div class="buttons">
+                    <a href="#" class="btn">About Me</a>
+                </div>
+
             </div>
 
-            <br>
+            <div class="hero-image">
 
-            <center>
-                <a href="/about">About Me</a>
-            </center>
+                <div class="circle">
+                    <img src="/winda.jpg" alt="Foto Winda">
+                </div>
 
-        </div>
+            </div>
 
-    </body>
-    </html>
-    `);
-});
+        </header>
 
-app.get('/about', (req, res) => {
-    res.send(`
-    <html>
-    <head>
-        <title>About Winda</title>
+        <section class="card">
 
-        <style>
-            body{
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                padding: 20px;
-            }
+            <h2>Data Diri</h2>
 
-            .container{
-                background: white;
-                max-width: 600px;
-                margin: auto;
-                padding: 25px;
-                border-radius: 12px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            }
+            <div class="info">
+                <p><span>Nama :</span> Winda Sartika Anwar</p>
+                <p><span>TTL :</span> Padang, 05 Oktober 2004</p>
+                <p><span>Kampus :</span> Politeknik Negeri Padang</p>
+                <p><span>Jurusan :</span> Teknik Elektro</p>
+                <p><span>Program Studi :</span> D4 Teknik Elektronika Industri</p>
+            </div>
 
-            h1{
-                text-align: center;
-                color: #444;
-            }
+        </section>
 
-            p{
-                line-height: 1.8;
-            }
+        <section class="card">
 
-            a{
-                text-decoration: none;
-                color: #4a4a4a;
-                font-weight: bold;
-            }
-        </style>
-    </head>
+            <h2>Keahlian</h2>
 
-    <body>
+            <div class="skills">
+                <div class="skill">Arduino</div>
+                <div class="skill">IoT Dasar</div>
+                <div class="skill">ESP32</div>
+                <div class="skill">HTML & CSS</div>
+            </div>
 
-        <div class="container">
+        </section>
 
-            <h1>About Me</h1>
-
-            <p><b>Nama :</b> Winda Sartika Anwar</p>
-            <p><b>Tempat, Tanggal Lahir :</b> Padang, 05 Oktober 2004</p>
-            <p><b>Kampus :</b> Politeknik Negeri Padang</p>
-            <p><b>Jurusan :</b> Teknik Elektro</p>
-            <p><b>Program Studi :</b> D4 Teknik Elektronika Industri</p>
-
-            <br>
-
-            <a href="/">← Kembali ke Home</a>
-
-        </div>
+        <footer>
+            "Keep growing through every challenge."
+        </footer>
 
     </body>
     </html>
